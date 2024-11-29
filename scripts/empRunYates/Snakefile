@@ -1,0 +1,108 @@
+import glob
+import pandas as pd
+from snakemake.utils import validate, min_version
+import numpy as np
+import itertools
+
+
+configfile: "config/config.yaml"
+
+# This should be placed in the Snakefile.
+workdir: config["wdir"]
+
+# Check if config["rename_reads"] exists. If not, set it to False.
+if "rename_reads" not in config:
+    config["rename_reads"] = True
+elif config["rename_reads"] == "":
+    config["rename_reads"] = True
+
+if not isinstance(config["rename_reads"], bool):
+    raise ValueError("The parameter rename_reads only can be 'True' or 'False'")
+    exit(1)
+
+sample_table_read = pd.read_table(
+    config["sample_file_read"], sep="\t", lineterminator="\n"
+)
+
+# let's check that the basic columns are present
+if not all(item in sample_table_read.columns for item in ["label", "file"]):
+    raise ValueError("The sample table must contain the columns 'label' and 'file'")
+    exit(1)
+
+# Check if damage profile is provided, if not set it to ""
+if not "damage" in sample_table_read.columns:
+    sample_table_read["damage"] = ""
+
+sample_table_read.set_index("short_label", inplace=True)
+sample_label_dict_read = sample_table_read.to_dict()["label"]
+sample_label_read = sample_table_read.index.values
+
+rule all:
+    input:
+        done_trim_and_merge=expand(
+            config["rdir"] + "/reads_merged/{smp}.merge.fq.gz", smp=sample_label_read
+        ),
+        done_sana1=expand(
+            config["rdir"] + "/reads_paired/{smp}_R1.sana.paired.fq.gz", smp=sample_label_read
+        ),
+        done_sana2=expand(
+            config["rdir"] + "/reads_paired/{smp}_R2.sana.paired.fq.gz", smp=sample_label_read
+        ),
+        done_initial_stats=expand(
+            config["rdir"] + "/stats/{smp}.stats-initial.txt", smp=sample_label_read
+        ),
+        done_renamed_reads=expand(
+            config["rdir"] + "/read-renamed/{smp}.fq.gz",
+            smp=sample_label_read,
+        ),
+        done_renamed_reads_mapping=expand(
+            config["rdir"] + "/read-renamed/{smp}.mapping.tsv.gz",
+            smp=sample_label_read,
+        ),
+        done_assm_input_1=expand(
+            f'{config["rdir"]}/assembly-input-1/{{smp}}.{{assm_input_1}}.fastq.gz',
+            smp=sample_label_read,
+            assm_input_1=config["assm_input_1"],
+        ),
+        done_stats_assm_input_1=expand(
+            f'{config["rdir"]}/stats/{{smp}}.{{assm_input_1}}.stats.txt',
+            smp=sample_label_read,
+            assm_input_1=config["assm_input_1"],
+        ),
+        done_assm_input_2=expand(
+            f'{config["rdir"]}/assembly-input-2/{{smp}}.{{assm_input_1}}-{{assm_input_2}}.fastq.gz',
+            smp=sample_label_read,
+            assm_input_1=config["assm_input_1"],
+            assm_input_2=config["assm_input_2"],
+        ),
+        done_stats_assm_input_2=expand(
+            f'{config["rdir"]}/stats/{{smp}}.{{assm_input_1}}-{{assm_input_2}}.stats.txt',
+            smp=sample_label_read,
+            assm_input_1=config["assm_input_1"],
+            assm_input_2=config["assm_input_2"],
+        ),
+        done_align=expand(
+            config["rdir"] + "/alignments/{smp}.done",
+            smp=sample_label_read,
+        ),
+
+
+"""
+##### load rules #####
+"""
+
+
+include: "rules/merge-reads.smk"
+include: "rules/stats-initial.smk"
+include: "rules/read-rename.smk"
+include: "rules/assembly-input-1.smk"
+include: "rules/assembly-input-2.smk"
+include: "rules/reads-sana.smk"
+include: "rules/bwa-align.smk"
+
+
+
+
+
+
+

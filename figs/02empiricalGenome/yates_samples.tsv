@@ -1,0 +1,29 @@
+sampleSource	species	period	origin	code	totalAssessed	passed	samples
+Howler Monkey	Alouatta palliata	20th-21st century	Nicaragua	OEM	5	5	OME002;OME003;OME005;OME007;OME009
+Gorilla	Gorilla beringei beringei	20th century	DR Congo	MTM	11	6	MTM001;MTM004;MTM005;MTMOOS; MTM008;MTM009
+Gorilla	Gorilla beringei grauer	20th century	DR Congo	FDM	1	1	FDM001
+Gorilla	Gorilla gorilla gorilla	20th century	Cameroon	ABM	2	2	ABM007;ABM008
+Gorilla	Gorilla gorilla gorilla	20th century	Cameroon	DJA	2	2	DJA002
+Gorilla	Gorilla gorilla gorilla	20th century	Cameroon	EBO	2	2	EBO001;EBO003
+Gorilla	Gorilla gorilla gorilla	20th-21st century	DR Congo	MTM	1	1	MTM010
+Chimpanzee	Pan troglodytes schweinfurthi	20th century	Uganda	KNP	7	7	KNP001;KNP003;KNP004;KNP005;KNP006;KNP007;KNP009
+Chimpanzee	Pan troglodytes ellioti	20th century	Cameroon	ABM	2	2	ABM007;ABM008
+Chimpanzee	Pan troglodytes ellioti	20th century	Cameroon	EBO	2	2	EBO008;EBO009
+Chimpanzee	Pan troglodytes ellioti	20th century	Cameroon	DJA	2	2	DJA006;DJA007
+Neanderthal	Homo (Neanderthal)	Middle Palaeolithic	Serbia	PES	1	1	PES001
+Neanderthal	Homo (Neanderthal)	Middle Palaeolithic	Italy	FUM	1	1	FUM001;FUM002;FUM003
+Neanderthal	Homo (Neanderthal)	Mid./Upp. Palaeolithic	Italy	GOY	2	2	GOY005;GOY006
+Modern human	Homo sapiens (modern human, pre-agricultural)	Later Stone Age	South Africa	OAK	4	4	OAK001;OAK002;OAK003;OAK004;OAK005
+Modern human	Homo sapiens (modern human, pre-agricultural)	Later Stone Age	Maracco	TAF	3	3	TAF008;TAF017;TAF018
+Modern human	Homo sapiens (modern human, pre-agricultural)	Later Stone Age	Ethiopia	MOA	1	1	MOA001
+Modern human	Homo sapiens (modern human, pre-agricultural)	Upper Palaeolithic	Czech Republic	PLV	2	2	PLV001
+Modern human	Homo sapiens (modern human, pre-agricultural)	Upper Palaeolithic	Spain	EMN	1	1	EMN001
+Modern human	Homo sapiens (modern human, pre-agricultural)	Upper Palaeolithic	France	RIG	1	1	RIG001
+Modern human	Homo sapiens (modern human, pre-agricultural)	Mesolithic	Spain	ECO	3	3	ECO002;ECO004;ECO010
+Modern human	Homo sapiens (modern human, pre-agricultural)	Mesolithic	Germany	OFN	1	1	OFN001
+Modern human	Homo sapiens (modern human, pre-antibiotic)	18th century	Maracco	ESA	5	5	ESA003;ESA004;ESA006;ESA007;ESA008
+Modern human	Homo sapiens (modern human, pre-antibiotic)	19th century	South Africa	PYK	5	5	PYK001;ΡYK002;PYK003;PYK004;PYK005.
+Modern human	Homo sapiens (modern human, pre-antibiotic)	18th century	Portugal	LIS	3	3	LIS001;LIS002;LIS003
+Modern human	Homo sapiens (modern human, pre-antibiotic)	1st – 2nd century	Spain	BSQ	1	1	BSQ001
+Modern human	Homo sapiens (modern human, present day)	21st century	Spain	VL	8	8	VLC001;VLC002;VLC003;VLC004;VLC005;VLC008;VLC009;VLC010
+Modern human	Homo sapiens (modern human, present day)	21st century	Spain	JAE	10	10	JAE006;JAE007;JAE008;JAE009;JAE010;JAE0

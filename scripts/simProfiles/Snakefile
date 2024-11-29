@@ -1,0 +1,73 @@
+import glob
+import pandas as pd
+from snakemake.utils import validate, min_version
+import numpy as np
+import itertools
+
+#
+##### set minimum snakemake version #####
+min_version("6.0.0")
+
+configfile: "config/config.yaml"
+
+# This should be placed in the Snakefile.
+
+"""
+Working directory
+"""
+
+
+# workdir: config["wdir"]
+
+# # message("The current working directory is " + WDIR)
+
+"""
+ The list of samples to be processed
+"""
+
+# Step 1: Preprocess the reference list
+# Assuming 'ref_list.txt' contains the full paths of reference files
+ref_list = [line.strip() for line in open(config["ref_list"]).readlines() if line.strip()]
+
+# Create a list of tuples (full_path, basename_without_extension)
+refs = [(ref, os.path.splitext(os.path.basename(ref))[0]) for ref in ref_list]
+
+# Create a dictionary to store both full paths and basenames
+refs_dict = {basename: full_path for full_path, basename in refs}
+
+# rule all
+# Assuming you have already preprocessed the reference list into `refs_dict`
+
+rule all:
+    input:
+        # Setup directories (list file generation)
+        expand("{rdir}/setups/{basename}/bact/list", 
+               rdir=config["rdir"],
+               basename=refs_dict.keys()),  # Use basenames for directory structure
+
+        # Simulate reads (generation of .done files)
+        expand("{rdir}/reads/{basename}_{damage}_cov{cov}/{basename}_{damage}_cov{cov}.done", 
+               rdir=config["rdir"],
+               basename=[basename for _, basename in refs],  # Extract basenames from tuples
+               damage=["dhigh", "dmid", "dnone"],  # Include the damage types here
+               cov=config["cov_values"]),  # Use coverage values from config
+
+        # Outputs include BAM, BAM index, and a flagstat report
+        expand("{rdir}/alignments/{basename}_{damage}_cov{cov}.done",
+               rdir=config["rdir"],
+               basename=[basename for _, basename in refs],  # Extract basenames from tuples
+               damage=["dhigh", "dmid", "dnone"],  # Include the damage types here
+               cov=config["cov_values"])  # Use coverage values from config  # Final BAM file with MD flags
+
+
+
+
+
+"""
+##### load rules #####
+"""
+
+
+include: "rules/dir-setup-simul.smk"
+include: "rules/simulate-reads.smk"
+include: "rules/bwa-align.smk"
