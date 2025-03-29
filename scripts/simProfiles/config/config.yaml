@@ -1,0 +1,39 @@
+# Basic config File
+
+rdir: "/data/simVar"
+sizeDist: "/Vi33.19.insize"
+
+dmid: "/data/damage/dmid"
+dhigh: "/damage/dhigh"
+dnone: "/damage/dnone"
+
+ref_list: "/data/simVar/EMNGDN.txt"
+
+threads: 32
+cov_values: [4]
+
+tmp: "/home/tmp"
+sample_file_read: "sample_id.txt"
+
+
+###############################################################################
+#
+# Common config values
+#
+###############################################################################
+#Add binary paths
+seqkit_bin: "/home/ctools/seqkit-2.2.0/seqkit"
+samtools_bin: "samtools"
+
+leehom_bin: "leehom-1.2.17"
+
+# Program parameters
+# Threads
+seqkit_threads: 16
+extract_threads: 8
+threads_16: 16
+threads_4: 4
+threads_8: 8
+threads_32: 32
+threads_64: 64
+threads_128: 128

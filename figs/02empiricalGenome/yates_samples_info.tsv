@@ -1,0 +1,29 @@
+sampleSource	species	origin	code	totalAssessed	passed	samples
+Gorilla	Gorilla beringei beringei	Mount Sabyinyo	DR Congo	11	6	MT5001;MT5002;MT5003;MT5004;MT5005;MT5006
+Gorilla	Gorilla beringei beringei	Mount Mikena	DR Congo	11	6	MTM001;MTM004;MTM005;MTMOOS; MTM008;MTM009
+Gorilla	Gorilla beringei grauer	Bitule	DR Congo	11	0	FDM001
+Gorilla	Gorilla gorilla gorilla	Abang Mbang	Cameroon	2	2	ABM007;ABM008
+Gorilla	Gorilla gorilla gorilla	Djaposten	Cameroon	2	2	DJA006;DJA007
+Gorilla	Gorilla gorilla gorilla	Ebolowa	Cameroon	2	2	EB0008;EB0009
+Gorilla	Gorilla gorilla gorilla	Mount Mikena	DR Congo	1	1	MTM010
+Chimpanzee	Pan troglodytes schweinfurthi	Kibale National Forest	Uganda	7	7	KNP001;KNP003;KNP004;KNP005;KNP006;KNP007;KNP009
+Chimpanzee	Pan troglodytes ellioti	Abang Mbang	Cameroon	2	2	ABM007;ABM008
+Chimpanzee	Pan troglodytes ellioti	Ebolwa	Cameroon	2	2	EB0008;EB0009
+Neanderthal	Homo (Neanderthal)	Pesturina Cave	Serbia	1	1	PES001
+Neanderthal	Homo (Neanderthal)	Funare	Italy	1	1	FUM002
+Neanderthal	Homo (Neanderthal)	de Nadale	Italy	2	2	GOY005;GOY006
+Neanderthal	Homo (Neanderthal)	Troisième caveme of Gayet	Belgium	2	2	GOY005;GOY006
+Modern human	Homo sapiens (modern human, pre-agricultural)	Oakhunst	South Africa	4	4	OAK001;OAK002;OAK003;OAK004;OAKOOS
+Modern human	Homo sapiens (modern human, pre-agricultural)	Taforalt	Maracco	3	3	TAF008;TAF017;TAF018
+Modern human	Homo sapiens (modern human, pre-agricultural)	Mota	Ethiopia	1	1	MOA001
+Modern human	Homo sapiens (modern human, pre-agricultural)	Dolní Vestorice	Czech Republic	2	2	PLV001
+Modern human	Homo sapiens (modern human, pre-agricultural)	El Miron	Spain	1	1	EMN001
+Modern human	Homo sapiens (modern human, pre-agricultural)	Rigney	France	1	1	RIG001
+Modern human	Homo sapiens (modern human, pre-agricultural)	El Collado	Spain	3	3	EC0002;EC0004;EC0010
+Modern human	Homo sapiens (modern human, pre-agricultural)	Grasse Ofnet Höhle	Germany	1	1	OFN001
+Modern human	Homo sapiens (modern human, pre-antibiotic)	Essaouira (Mogador)	Maracco	5	5	ESA003;ESA004;ESA006;ESA007;ESA008
+Modern human	Homo sapiens (modern human, pre-antibiotic)	Polyoak	South Africa	5	5	PYK001;ΡYK002;PYK003;PYK004;PYK005.
+Modern human	Homo sapiens (modern human, pre-antibiotic)	Lisbon	Portugal	3	3	LIS001;LIS002;LIS003
+Modern human	Homo sapiens (modern human, pre-antibiotic)	Basque country (modern day region af)	Spain	1	1	BSQ001
+Modern human	Homo sapiens (modern human, present day)	Valencia	Spain	8	8	VL0001;M.0002;V.0003;VLC004;VLC005;VLC008;VL0009;V.0010
+Modern human	Homo sapiens (modern human, present day)	Jaen	Spain	10	10	JAEDOG;JAE007;JAE008;JAE009;JAE010;JAE0

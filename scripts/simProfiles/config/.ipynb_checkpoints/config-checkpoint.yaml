@@ -1,0 +1,64 @@
+# Basic config File
+
+rdir: "/data/simVar"
+sizeDist: "/home/paper1/genreads/meta200/Vi33.19.insize"
+
+
+dmid: "/home/project2/data/damage/dmid"
+dhigh: "/home/project2/data/damage/dhigh"
+dnone: "/home/project2/data/damage/dnone"
+
+
+ref_list: "/data/simVar/EMNGDN.txt"
+
+
+threads: 32
+cov_values: [4]
+
+
+
+
+tmp: "/home/project3/tmp"
+sample_file_read: "/home/project3/data/sample_files/sample_id.txt"
+
+
+###############################################################################
+#
+# Common config values
+#
+###############################################################################
+#Add binary paths
+seqkit_bin: "/home/ctools/seqkit-2.2.0/seqkit"
+quast_bin: "metaquast.py"
+prodigal_bin: "prodigal"
+prokka_bin: "prokka"
+bowtie2_bin: "bowtie2"
+bowtie2_build_bin: "bowtie2-build"
+samtools_bin: "samtools"
+
+leehom_bin: "/home/ctools/leehom-1.2.17"
+
+
+# Program parameters
+# Threads
+seqkit_threads: 16
+extract_threads: 8
+threads_16: 16
+threads_4: 4
+threads_8: 8
+threads_32: 32
+threads_64: 64
+threads_128: 128
+
+
+
+
+
+
+# Bowtie2
+bowtie2_parms: -D 20 -R 3 -N 1 -L 20 -i S,1,0.50 --no-unal
+
+# Samtools
+samtools_view_parms: "-F 4 -b"
+samtools_sort_parms: "-m 1G -T /dev/shm/"
+
